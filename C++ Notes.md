@@ -194,12 +194,21 @@ etc.
     while(word != "@@@");
 ```
 
-### While Statement 
- 
-    while (i>0)
+### While Loop 
+Used for every other time a loop is needed
+
+#### Format
+`while(`*condition*`) {`*body*`;}` 
+
+#### Example
+```
+    int a = 0;
+    int b = 1;
+    while (a < 10)
         {
-        //...
+            a += b; // making fibonacci sequence
         }
+```
 
 # IV. Functions
 
