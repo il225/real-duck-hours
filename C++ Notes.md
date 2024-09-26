@@ -1,5 +1,5 @@
 # ***C++ Notes***
-in case of amnesia or smthn
+Will Show a good reference for C++, not explaining linux/git here
 
 # GOOD PRACTICEs
 - comments above functions are good practice
@@ -79,29 +79,48 @@ note: left_value is the value on the left of an `=`
 
 
 
-# III. Input Output (I/O) Statements
+# III. Input Output (I/O) Statements and Loops
 
 ## If Statement
+Simple conditional check
+
+### Format
+`if(`*condition*`) {`*body*`;}`  
+`else if(`*condition`) {`*body*`;}`  
+`else {`*body*`;}`
+
+### Example
 ```
-    if (a < b) {
-        cout << "a is less than b" << endl; }
+    if (a < b)      // condition in parentheses
+    {                                
+        cout << "a is less than b" << endl;     // body in braces
+    }   
 
-    else if (a > b) {
-        cout << "a is greater than b"; }
+    else if (a > b)     //"else if" is skipped when "if" is fullfilled, if the checks are unrelated, then just use two if statements
+    {
+        cout << "a is greater than b" << endl; 
+    }
 
-    else if (a == b) {
+    else if (a == b) 
+    {
         cout << "a and b are equal" << endl;
     }
-    else {
-        cout << "error: entered values are incompatible" << endl; }
+    else    //
+    {
+        cout << "error: entered values are incompatible" << endl; 
+    }
 ```
+
 ## Switch Statement
 works with ordinal types (set next and last values) (*e.g.* `char`, `int`, or `enum`)
 
+### Format
+`switch(`*variable*`) {case "`*literal*`": `*body*`; break;  default: `*body*`; break; }` 
 
 **REMEMBER TO END EVERY CASE WITH** `break;`**!**
 otherwise, the code will fall through to the other cases
 
+### Example
 ```
     int a;
     cin >> a;
@@ -109,18 +128,71 @@ otherwise, the code will fall through to the other cases
 	switch (a)      // a is being compared to each case
     {   
         case "1":   // will enter this block if a == 1 
-            //...
+            cout << "a is one" << endl;
             break;  // will end switch and go on
-
         case "2":   // will enter this block if a == 2
-            //...
+            cout << "a is two" << endl;
             break;
         default:    // will enter this block if no other cases are satisfied
-            //...
+            cout << "a is not one or two" << endl;
             break;
     }
 ```
+
 ## Loops
+When there needs to be many iterations, use loops!  
+
+### For Loop
+Used for counters
+initializes a variable only useable *inside* the loop (modular)
+
+Executes in the order:  
+1. execute **initialization**
+2. evaluate **condition**
+3. execute **body** (if condition satisfied)
+4. execute **update**
+5. evaluate **condition**
+6. execute **body** (if condition satisfied)
+7. execute **update**  
+etc.
+
+#### Format
+`for(`*initialization*`; `*condition*`; `*update*`) {`*body*`;}` 
+  
+#### Example
+```
+    for (int i = 0; i <10; ++i)
+        {
+            cout << "how goes it?" << endl; // will print 10 times
+        }
+```
+
+### Sentinel Loop (Do Loop)
+Used when body must be executed at least once
+
+Executes in the order:  
+
+1. execute **body**
+2. evaluate **condition**
+3. execute **body** (if condition satisfied)
+4. evaluate **condition**
+5. execute **body** (if condition satisfied)
+etc.
+
+#### Format
+ `do {`*body*`} while(`*condition*`);`
+
+#### Example
+```
+    int word_count = 0;
+    do 
+    {
+        string word;
+        cin >> word;
+        word_count++;
+    }
+    while(word != "@@@");
+```
 
 ### While Statement 
  
@@ -128,15 +200,6 @@ otherwise, the code will fall through to the other cases
         {
         //...
         }
-
-### For Statement
-  
-    for (i=0; i<0; ++i)
-        //...;
-
-### Sentinel Loop (Do Statement)
-
-
 
 # IV. Functions
 
