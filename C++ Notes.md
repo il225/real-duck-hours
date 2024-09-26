@@ -3,54 +3,54 @@ in case of amnesia or smthn
 
 # GOOD PRACTICEs
 - comments above functions are good practice
-- function names: every new word upper is good practice
+- function names: every new word upper is good practice (camelCase)
 - isolating variables within blocks of code (*modularity*) is good practice
 
 # Vocabulary
 
-**Abstraction**: Hiding unnessesary details in a facility (header file, library, etc.)\
+**Abstraction**: Hiding unnessesary details in a facility (header file, library, etc.)  
 **Divide and Conquer**: Big task become many small and simple task
-**Conforming**: A valid program ('conforms' to C++ in this case)\
-**Implementation**: Using defined features/functions (dependent on compiler and library)\
+**Conforming**: A valid program ('conforms' to C++ in this case)  
+**Implementation**: Using defined features/functions (dependent on compiler and library)  
 **Unspecified**: functions or variables lacking a definition thus being non-conforming
 
 
 ### **Statement**: A step within a program *(e.g. `int x;` )*
-**Definition**: A statement that provides a data type and name of a variable or function\
+**Definition**: A statement that provides a data type and name of a variable or function  
 **Declaration**: A definition that also assigns an initial value (initialization) 
 
 ### **Expression**: equation with variables *(e.g. `x+=y;`)*
-**Assignment**: changing a variable's value (not initialization)\
+**Assignment**: changing a variable's value (not initialization)  
 *see operators*
 
 **Refactoring**: improving code with reorganization
 
 # I. Operators
 
-note: lval is the value on the left of an `=`
+note: left_value is the value on the left of an `=`
 
-`f(a)`    **function call**:		pass `a` to `f` as an argument\
-`++lval`  **pre-increment**:		increment and use incremented value\
-`--lval`  **pre-decrement**:		decrement and use decremented value\
-`!a`      **not**:			result is bool\
-`-a`      **unary minus**   (normal subtraction)\
-`a*b`     **multiply**\
-`a/b`     **divide**\
-`a%b`     **modulo (remainder)**:	only for integers\
-`a+b`     **add**\
-`a-b`     **subtract**\
-`out<<b`  **write `b` to out**:		where out is an ostream\
-`in>>b`   **read from in into `b`**:	where in is an istream\
-`a<b`     **less than**:		result is bool\
-`a<=`     **less than or equal**:	result is bool\
-`a>b`    **greater than**:		result is bool\
-`a>=b`    **greater than or equal**:	result is bool\
-`a==b`    **equal**:			result is bool\
-`a!=b`    **not equal**:		result is bool\
-`a&&b`    **logical and**:		result is bool\
-`a||b`    **logical or**:		result is bool\
-`lval=a`  **assignment**:		not to be confused with `==`\
-`lval*=a` **compound assignment**:	`lval=lval*a`; works with `/`,`%`,`+`, and `-`
+`f(a)`    **function call**:		pass `a` to `f` as an argument  
+`++left_value`  **pre-increment**:		increment and use incremented value  
+`--left_value`  **pre-decrement**:		decrement and use decremented value  
+`!a`      **not**:			        returns bool  
+`-a`      **unary minus**           (normal subtraction)  
+`a * b`     **multiply**  
+`a / b`     **divide**  
+`a % b`     **modulo (remainder)**:	only for integers  
+`a + b`     **add**  
+`a - b`     **subtract**  
+`out << b`  **write `b` to out**:		where out is an ostream  
+`in >> b`   **read from in into `b`**:	where in is an istream  
+`a < b`     **less than**:		 returns bool  
+`a <= b`     **less than or equal**:	 returns bool  
+`a > b`    **greater than**:		 returns bool  
+`a >= b`    **greater than or equal**:	 returns bool  
+`a == b`    **equal**:			 returns bool  
+`a != b`    **not equal**:		 returns bool  
+`a && b`    **logical and**:		 returns bool  
+`a || b`    **logical or**:		 returns bool  
+`left_value = a`  **assignment**:		not to be confused with `==`  
+`left_value *= a` **compound assignment**:	`left_value = left_value * a`; works with `/`,`%`,`+`, and `-`
 
 [Order of Precedence](https://en.cppreference.com/w/cpp/language/operator_precedence "List from C++ Reference")
 
@@ -70,8 +70,8 @@ note: lval is the value on the left of an `=`
 
 ## Shouldn't:
 - begin with an underscore *(that's for implementations)*
-- be in all capitals *(that's for macros (or classes?))*
-- be too long or short
+- be in all capitals *(that's for constants)*
+- be unreasonably long or short
 - ***share its name with a keyword!***
   
 **[List of Keywords](https://en.cppreference.com/w/cpp/keyword "List from C++ Reference")**
@@ -87,16 +87,16 @@ note: lval is the value on the left of an `=`
 ### If Statement
 
     if (a<b)
-        cout << "max("<< a <<", "<< b <<") is" <<b<< "\n";
+        cout << "max("<< a <<", "<< b <<") is" <<b<< "  n";
 
     else if (a>b) 
-        cout << "max("<< a <<", "<< b <<") is" <<a<< "\n";
+        cout << "max("<< a <<", "<< b <<") is" <<a<< "  n";
 
     else 
         cout << "error: entered numbers are same or not integers";
 
 ## Switch Statement
-works with `char`, `int`, or `enum`\
+works with `char`, `int`, or `enum`  
 ***doesn't work with string!***
 ***
 **REMEMBER TO END EVERY CASE WITH** `break;`**!**
@@ -141,58 +141,58 @@ works with `char`, `int`, or `enum`\
 
 ### Terminology
 
-**Vector**: a continuous list of data that can be changed '*a dynamic array*'\
-**Element**: a value of a vector\
-**Index**: the location of an element in a vector\
-***NOTE: the first element of a vector has the index [0]. Errors caused by this quirk of the index numbering are called***\
+**Vector**: a continuous list of data that can be changed '*a dynamic array*'  
+**Element**: a value of a vector  
+**Index**: the location of an element in a vector  
+***NOTE: the first element of a vector has the index [0]. Errors caused by this quirk of the index numbering are called***  
 *off-by-one-errors*
 
 ### Syntax 
 
 Within `vector<int>pin = {1,2,3};`
 
-`vector` establishes the vector\
-`<int>` is the vector's data type\
-`pin` is the vector's name\
-`{}` is the list of elements\
+`vector` establishes the vector  
+`<int>` is the vector's data type  
+`pin` is the vector's name  
+`{}` is the list of elements  
 `1` is the first element
 
 Within `vector<string>names(4);`
 
-`vector` establishes the vector\
-`<string>` is the vector's data type\
-`name` is the vector's name\
-`(4)` is the amount of elements in the vector\
+`vector` establishes the vector  
+`<string>` is the vector's data type  
+`name` is the vector's name  
+`(4)` is the amount of elements in the vector  
 *the initialization of string vectors sets all elements to "", called empty strings*
 
-*`vector<int>vi(4);` initializes all elements to 0*\
+*`vector<int>vi(4);` initializes all elements to 0*  
 *`vector<double>vd(4);` initializes all elements to 0.0*
 
 ### Vector functions
 
-`.size()`: compile/run-time operator that calls the size of a vector\
-`.push_back()`: adds an element to the end of a vector\
+`.size()`: compile/run-time operator that calls the size of a vector  
+`.push_back()`: adds an element to the end of a vector  
 `.erase()`: deletes an element and changes indexes of elements to stay continuous
 
-`.empty()`: best for checking if a vector has elements\
+`.empty()`: best for checking if a vector has elements  
 `.begin()`: best for ranges
 
 [More Vector Functions](https://en.cppreference.com/w/cpp/container/vector "List from C++ Reference")
 
 ### Printing a vector
-something commonplace in basic menus.\
+something commonplace in basic menus.  
 to print elements of a vector, use:
 ```
 vector<int>v = {5,7,9,4,6,8};
 for (int i=0; i < v.size; ++i)
-    cout << v[i] << "\n";
+    cout << v[i] << "  n";
 ```
 
 # VI. Errors
 
 ### Terminology
 
-**argument**: caller\
+**argument**: caller  
 **function**: callee
 
 ### Sources of Errors
@@ -201,17 +201,17 @@ this can be thought of as a checklist
 
 - [x] **Poor specification (to user)** 
    
-- [x] **Incomplete Programs**\
+- [x] **Incomplete Programs**  
 when not all cases are handled— just make sure to get around to it
 
-- [x] **Unexpected Arguments**\
+- [x] **Unexpected Arguments**  
 impossible to compute (?) 
    
-- [x] **Unexpected Input**\
+- [x] **Unexpected Input**  
 using wrong data type
 - [x] **Unexpected State**
 
-- [x] **Logical Errors**\
+- [x] **Logical Errors**  
 program doesn't work as intended
 
 
@@ -279,7 +279,7 @@ silent errors are worst (no detection means no hints!)
 # todo
 ODE stuff
 
-**void**: returns no value but still runs
+**void**:returns  no value but still runs
 "pass on function"
 
 think of range of a vector as
@@ -299,7 +299,7 @@ don't sweat it but reverse engineering is more difficult
 
 ### Function Definition
 ***
-Whichever function is being called is the callee\
+Whichever function is being called is the callee  
 
 General Syntax: *type identifier* (*parameter list*) {*function body*}
 
@@ -323,10 +323,10 @@ Example: `square(x);`
 
 **Output type must match return type:**
 
-`bool` -> `return true;` or `return false;`\
-`int` -> `return 0;` \
-`double` ->	`return 0.0;`\
-`char` -> `return "x";`\
+`bool` -> `return true;` or `return false;`  
+`int` -> `return 0;`   
+`double` ->	`return 0.0;`  
+`char` -> `return "x";`  
 `string` ->	`return "alex the lion, what the hell are you doing in my car?";`
 
 functions that have the type identifier `void` will not have a return function
@@ -345,16 +345,16 @@ constexpr must be initialized at compile-time
 
 ## Data Type Promotion
 
-Smaller Data Types can be expanded into larger ones\
+Smaller Data Types can be expanded into larger ones  
 Large data types ***shouldn't be expanded!*** though the compiler wont stop you
 
 syntax is confusing so just avoid it in general.
 
 ### Sizes of Data:
-bool: 1 byte\
-char: 1 byte\
-int: 4 bytes\
-double: 8 bytes\
+bool: 1 byte  
+char: 1 byte  
+int: 4 bytes  
+double: 8 bytes  
 string: 24 bytes
 
 
