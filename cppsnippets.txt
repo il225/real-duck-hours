@@ -1,0 +1,37 @@
+this is a plaintext file
+
+here are the snippets i use for c++
+
+"Make a main program": {
+		"prefix": "prog",
+		"body": [
+			"#include<iostream>",
+			"using namespace std;",
+			"",
+			"int main()",
+			"{",
+			"//cout << \"hello world\";",
+			"return 0;",
+			"}"
+		],
+		"description": "Log output to console",
+	},
+	"Make a documentation header": {
+		"prefix": "docuhead",
+		"body": [
+			"/**",
+			"*   @file: File Name Goes Here",
+			"* @author: Name Goes Here",
+			"*   @date: Date Goes Here",
+			"*  @brief: Description Goes Here",
+			"*/",
+		]
+	},
+	"class": {
+		"prefix": "class",
+		"body": [
+			"class{",
+			"$1",
+			"}",
+		]
+	}
