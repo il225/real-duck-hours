@@ -16,10 +16,10 @@ in case of amnesia or smthn
 
 
 ### **Statement**: A step within a program *(e.g. `int x;` )*
-**Definition**: A statement that provides a data type and name of a variable or function  
-**Declaration**: A definition that also assigns an initial value (initialization) 
+**Declaration**: A statement that provides a data type and name of a variable or function  
+**Initialization**: A definition that also assigns an initial value (defined) 
 
-### **Expression**: equation with variables *(e.g. `x+=y;`)*
+### **Expression**: equation with variables *(e.g. `x += y;`)*
 **Assignment**: changing a variable's value (not initialization)  
 *see operators*
 
@@ -81,50 +81,60 @@ note: left_value is the value on the left of an `=`
 
 # III. Input Output (I/O) Statements
 
-## Iteration Statements
-*note
+## If Statement
+```
+    if (a < b) {
+        cout << "a is less than b" << endl; }
 
-### If Statement
+    else if (a > b) {
+        cout << "a is greater than b"; }
 
-    if (a<b)
-        cout << "max("<< a <<", "<< b <<") is" <<b<< "  n";
-
-    else if (a>b) 
-        cout << "max("<< a <<", "<< b <<") is" <<a<< "  n";
-
-    else 
-        cout << "error: entered numbers are same or not integers";
-
+    else if (a == b) {
+        cout << "a and b are equal" << endl;
+    }
+    else {
+        cout << "error: entered values are incompatible" << endl; }
+```
 ## Switch Statement
-works with `char`, `int`, or `enum`  
-***doesn't work with string!***
-***
+works with ordinal types (set next and last values) (*e.g.* `char`, `int`, or `enum`)
+
+
 **REMEMBER TO END EVERY CASE WITH** `break;`**!**
+otherwise, the code will fall through to the other cases
+
+```
+    int a;
+    cin >> a;
 
 	switch (a)      // a is being compared to each case
     {   
-        case "1":
+        case "1":   // will enter this block if a == 1 
+            //...
+            break;  // will end switch and go on
+
+        case "2":   // will enter this block if a == 2
             //...
             break;
-        case "2":
-            //...
-            break;
-        default:
+        default:    // will enter this block if no other cases are satisfied
             //...
             break;
     }
+```
+## Loops
 
-## While Statement 
+### While Statement 
  
     while (i>0)
         {
         //...
         }
 
-## For Statement
+### For Statement
   
     for (i=0; i<0; ++i)
         //...;
+
+### Sentinel Loop (Do Statement)
 
 
 
