@@ -20,13 +20,13 @@ Development Details
 ### Scrum
 
 #### Ideals
-Estimate backlog work for a sprint\
-backlog = todo in form of user stories\
+Estimate backlog work for a sprint  
+backlog = todo in form of user stories  
 Sprint = 2-3 week cycle of programming
 
 #### Sprint Anatomy
-Beginning of Each Sprint is Planning and Estimating\
-Daily Standups replace lengthy meetings\
+Beginning of Each Sprint is Planning and Estimating  
+Daily Standups replace lengthy meetings  
 End of each sprint is a Retrospective and Review
 
 #### Scrum Team Roster
@@ -50,11 +50,11 @@ Stakeholders
 ### Kanban
 
 #### Ideals
-Don't estimate to avoid compromising quality\
+Don't estimate to avoid compromising quality  
 Implement WIP limits to avoid a surplus of have-baked code
 
 # User Stories
-Feedback from customers\
+Feedback from customers  
 Consists of:
 - Title
     - As a...   I want...  so that... 
@@ -69,11 +69,11 @@ Consists of:
 
 User Stories Should Follow the INVEST guidelines
 
-I ndependent task   ---> can be done in any order\
-N egotiable         ---> open to conversation\
-V aluable           ---> give another value to software\
-E stimateable       ---> relatively sized\
-S mall              ---> sprintable\
+I ndependent task   ---> can be done in any order  
+N egotiable         ---> open to conversation  
+V aluable           ---> give another value to software  
+E stimateable       ---> relatively sized  
+S mall              ---> sprintable  
 T estable           ---> validatable
 
 

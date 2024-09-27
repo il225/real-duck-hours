@@ -1,7 +1,5 @@
 // ima make a math file to call functions from
 
-#include "c:\Users\Isaac\Desktop\text files\real-duck-hours\C++\std_lib_facilities.h"
-
 using namespace std;
 
 

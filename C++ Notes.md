@@ -6,6 +6,8 @@ Will Show a good reference for C++, not explaining linux/git here
 - function names: every new word upper is good practice (camelCase)
 - isolating variables within blocks of code (*modularity*) is good practice
 
+- do not truncate variables, use type casting if absolutely necessary
+
 # Vocabulary
 
 **Abstraction**: Hiding unnessesary details in a facility (header file, library, etc.)  
@@ -167,7 +169,7 @@ etc.
         }
 ```
 
-### Sentinel Loop (Do Loop)
+### Sentinel Loop (Do-While Loop)
 Used when body must be executed at least once
 
 Executes in the order:  
@@ -204,18 +206,22 @@ Used for every other time a loop is needed
 ```
     int a = 0;
     int b = 1;
+    int c;
     while (a < 10)
         {
-            a += b; // making fibonacci sequence
+            cout << a << endl;
+            c = a;
+            a += b;
+            b = c;
         }
 ```
 
 # IV. Functions
 
-## function should do one thing: make common sense
+## A function should do one thing: make common sense
 
 **in-line function**: function defined in code and called in code
-**function call**: function defined in header and called in code
+**function call**: function defined in header file (.h) and called in code
 
 [add: how to make custom functions, function anatomy]: #
 
@@ -291,6 +297,7 @@ impossible to compute (?)
    
 - [x] **Unexpected Input**  
 using wrong data type
+
 - [x] **Unexpected State**
 
 - [x] **Logical Errors**  
