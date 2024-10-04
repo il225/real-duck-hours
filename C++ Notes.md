@@ -218,12 +218,34 @@ Used for every other time a loop is needed
 
 # IV. Functions
 
+## How to use them
+If the program is only one file,
+- Functions must be declared before they are called  
+- Functions can be defined before or after `int main()`  
+
+If the program uses one header file,
+- declare the function at the top of the header file
+- define the function later in the 
+- use `#include "`*filename.h`"` in the .ccp file to give the program access to the functions
+
+You can also use one header file to declare a function and one cpp file to define it but there can be issues depending on the compiler and linker and such  
+tldr; create functions in one file or use a different system if working on a pre-existing piece of software
+
+### Format 
+
+#### Declaration
+*return type* *functionName* (*parameter*);
+
+#### Definition
+*return type* *functionName* (*parameter*) {*body*} 
+
+
 ## A function should do one thing: make common sense
 
-**in-line function**: function defined in code and called in code
+**in-line function**: function defined in code and called in code  
 **function call**: function defined in header file (.h) and called in code
 
-[add: how to make custom functions, function anatomy]: #
+[note to future me: edit this to make more clear on terminology and good practice]: #
 
 # V. Vectors
 
@@ -365,11 +387,14 @@ fail fast: don't hide or drag out errors, fail fast and recover
 
 silent errors are worst (no detection means no hints!)
 
-# todo
+# to add
 ODE stuff
 
-**void**:returns  no value but still runs
-"pass on function"
+**void**:returns  no value but still runs  
+"pass on function" `&`  
+
+explain linux terminal stuffs in different file  
+
 
 think of range of a vector as
  `0 : v.size` 
